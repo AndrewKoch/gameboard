@@ -68,27 +68,6 @@ class Piece(object):
         return colors[self.owner] + str(self.id) + colors["end"]
 
 
-def test_board():
-
-    board = GameBoard(args.rows, args.cols, args.max_players)
-    game = GameManager()
-
-    # ninja = board.make_piece(8, 1)
-    # board.place_piece_at_location(ninja, 0, 0)
-
-    for i in xrange(0, 10):
-        for j in xrange(0, 4):
-            piece = game.make_piece(8, 1)
-            game.place_piece_at_location(piece, board, j, i)
-
-    for i in xrange(0, 10):
-        for j in xrange(6, 10):
-            piece = game.make_piece(8, 2)
-            game.place_piece_at_location(piece, board, j, i)
-
-    print board
-
-
 def main(args):
     log_fmt = "%(asctime)s %(levelname)s [%(filename)s:%(lineno)d] %(message)s"
 
@@ -98,8 +77,6 @@ def main(args):
         level = logging.INFO
 
     logging.basicConfig(level=level, format=log_fmt)
-
-    test_board()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
